@@ -7,23 +7,12 @@ Citizen.CreateThread(function()
     end
 end)
 
--- Function
-function sendnotification(message)
-    SetNotificationBackgroundColor(70)
-    SetNotificationTextEntry("STRING")
-    AddTextComponentString(message)
-    DrawNotification(false, false)
-    end
-
--- Variables
-
-local ped = PlayerPedId()
 
 -- Menus
 
 local MenuTouches = {
-    Base = { Title = "~p~Menu Touches",HeaderColor = {255, 0, 0,}},
-    Data = { currentMenu = "HuntRP" },
+    Base = { Title = "~p~Key Menu/Menu Touches",HeaderColor = {255, 0, 0,}},
+    Data = { currentMenu = "ServerName" },
     Events = {
         onSelected = function(self, _, btn, JMenu, menuData, currentButton, currentSlt, result)
  
@@ -32,19 +21,19 @@ local MenuTouches = {
     },
 
     Menu = {
-        ["HuntRP"] = {
+        ["ServerName"] = {
             b = {
-                {name = "Menu Emotes", ask = "F3", askX = true},
-                {name = "Inventaires", ask = "F5", askX = true},
-                {name = "Menu Métiers", ask = "F6", askX = true},
-                {name = "Menu Gang", ask = "F7", askX = true},
-                {name = "Factures", ask = "F9", askX = true},
-                {name = "Radio", ask = "F10", askX = true},
-                {name = "Tomber", ask = "F11", askX = true},
-                {name = "Ouvrir/Fermer compteur de Km/h", ask = "U", askX = true},
-                {name = "Ceinture", ask = "K", askX = true},
-                {name = "Ouvrir/Fermer coffre", ask = "L", askX = true},
-                {name = "Crier/Parler/Chuchoter", ask = "W", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                {name = "Gauche/Left", ask = "Droite/Right", askX = true},
+                
+                -- Don't forget the ","
+                --N'oubliez pas la ","
 
             }
         },
@@ -53,9 +42,10 @@ local MenuTouches = {
 
 -- Ouverture du Menu
 
+-- Replace the command name by key
+-- Remplacez CommandName par touches
 
-
-RegisterCommand('touches', function()
+RegisterCommand('CommandName', function()
     CreateMenu(MenuTouches)
     
     
